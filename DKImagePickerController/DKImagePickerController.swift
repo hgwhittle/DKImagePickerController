@@ -225,11 +225,11 @@ public class DKImagePickerController: UINavigationController {
 						if success {
 							if let newAsset = PHAsset.fetchAssetsWithLocalIdentifiers([newImageIdentifier], options: nil).firstObject as? PHAsset {
 								self.dismissViewControllerAnimated(true, completion: nil)
-								self.selectedImage(DKAsset(originalAsset: newAsset), needsToDismiss: true)
+								self.selectedImage(DKAsset(originalAsset: newAsset), needsToDismiss: false)
 							}
 						} else {
 							self.dismissViewControllerAnimated(true, completion: nil)
-							self.selectedImage(DKAsset(image: image), needsToDismiss: true)
+							self.selectedImage(DKAsset(image: image), needsToDismiss: false)
 						}
 					})
 			})
